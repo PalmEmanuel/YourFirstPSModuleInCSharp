@@ -8,14 +8,22 @@
       PowerShell 5.1+: netstandard2.0
     -->
     <TargetFramework>net7.0</TargetFramework>
+
     <!-- This implicitly adds a bunch of common base class libraries (BCL) so you dont have to put 'using namespace' for them at the top -->
     <ImplicitUsings>enable</ImplicitUsings>
+
     <!-- This makes it easier to deal with app-breaking null situations at compile time before you run your code -->
     <Nullable>enable</Nullable>
+
     <!-- This cuts down on the amount of stuff that shows up in our out directory, if localization isn't important to you-->
     <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
 
   </PropertyGroup>
+
+  <!-- Packages you add with dotnet add package will show up in this first itemgroup you define. -->
+  <ItemGroup>
+    <PackageReference Include="IPNetwork2" Version="2.6.548" />
+  </ItemGroup>
 
 <!-- PowerShell 7.2+ Module Configuration -->
   <PropertyGroup>
@@ -24,7 +32,6 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- These DLLs ship in PS7. You may need to add more to the list depending on your app's dependencies, and PS5.1 requires PowerShellStandard  -->
-    <PackageReference Include="IPNetwork2" Version="2.6.548" />
     <PackageReference Include="System.Management.Automation" Version="7.3.2" PrivateAssets="all" />
 
     <!-- This one is weird, SMA lists 13.0.1 but it keeps getting output anyways, so we use exclude rather than private -->
