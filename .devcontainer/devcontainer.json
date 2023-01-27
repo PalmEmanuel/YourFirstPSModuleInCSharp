@@ -10,12 +10,14 @@
     }
   },
   "customizations": {
-    "extensions": [
-      "justin-grote.powershell-extension-pack",
-      "josefpihrt-vscode.roslynator", //This also installs the C# extension. We cant specify them both because it leads to a race condition currently due to bug in codespaces loading
-      "adrianwilczynski.namespace",
-      "kreativ-software.csharpextensions"
-    ],
+    "vscode": {
+      "extensions": [
+        "justin-grote.powershell-extension-pack",
+        "josefpihrt-vscode.roslynator", //This also installs the C# extension. We cant specify them both because it leads to a race condition currently due to bug in codespaces loading
+        "adrianwilczynski.namespace",
+        "kreativ-software.csharpextensions"
+      ]
+    },
     "settings": {
       "[csharp]": {
         "editor.defaultFormatter": "ms-dotnettools.csharp",
@@ -38,7 +40,8 @@
       "omnisharp.enableRoslynAnalyzers": true,
       "omnisharp.organizeImportsOnFormat": true,
       "omnisharp.useModernNet": true,
-      "extensions.ignoreRecommendations": true, // Suppresses a message about PowerShell stable because we use preview
+      "extensions.ignoreRecommendations": true, // Suppresses a message about PowerShell stable because we use preview extension
+      "powershell.powerShellDefaultVersion": "PowerShell",
       "terminal.integrated.profiles.linux": {
         "pwsh": {
           "path": "pwsh",
@@ -47,7 +50,8 @@
           ],
           "icon": "terminal-powershell"
         }
-      }
+      },
+      "terminal.integrated.defaultProfile.linux": "pwsh"
     }
     // Use 'postCreateCommand' to run commands after the container is created.
     // "postCreateCommand": "dotnet restore",

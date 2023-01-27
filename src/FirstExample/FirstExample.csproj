@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <!--
+      This targets PowerShell 7.3+
+      To target others:
+      PowerShell 7.2+: net6.0
+      PowerShell 5.1+: netstandard2.0
+    -->
+    <TargetFramework>net7.0</TargetFramework>
+    <!-- This implicitly adds a bunch of BCL libraries -->
+    <ImplicitUsings>enable</ImplicitUsings>
+    <!-- This makes it easier to deal with app-breaking null situations at compile time before you run your code -->
+    <Nullable>enable</Nullable>
+    <!-- This cuts down on the amount of stuff that shows up in our out directory, if localization isn't important to you-->
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+
+  </PropertyGroup>
+
+<!-- PowerShell 7.2+ Module Configuration -->
+  <PropertyGroup>
+    <!-- PWSH is our runtime so this helps us exclude BCL libraries. You may need to change this if a BCL library you need doesnt ship with PWSH -->
+    <SelfContained>false</SelfContained>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- These DLLs ship in PS7. You may need to add more to the list depending on your app's dependencies, and PS5.1 requires PowerShellStandard  -->
+    <PackageReference Include="IPNetwork2" Version="2.6.548" />
+    <PackageReference Include="System.Management.Automation" Version="7.3.2" PrivateAssets="all" />
+
+    <!-- This one is weird, SMA lists 13.0.1 but it keeps getting output anyways, so we use exclude rather than private -->
+    <!-- <PackageReference Include="Newtonsoft.Json" Version="13.0.1" ExcludeAssets="all" /> -->
+    <!-- ExcludeAssets is used because these include runtimes we dont want to ship -->
+    <!-- <PackageReference Include="System.Security.Cryptography.Pkcs" Version="7.0.1" ExcludeAssets="all" /> -->
+    <!-- <PackageReference Include="System.Security.Cryptography.ProtectedData" Version="7.0.0" ExcludeAssets="all" /> -->
+  </ItemGroup>
+</Project>
