@@ -53,8 +53,10 @@
         }
       },
       "terminal.integrated.defaultProfile.linux": "pwsh"
-    }
-    // Use 'postCreateCommand' to run commands after the container is created.
+
+    },
+    // Suppresses the Welcome to Codespaces which launches in bash no matter what
+    "postCreateCommand": "mkdir -p $HOME/.config/vscode-dev-containers/ && touch $HOME/.config/vscode-dev-containers/first-run-notice-already-displayed"
     // "postCreateCommand": "dotnet restore",
     // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
   }
