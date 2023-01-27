@@ -31,7 +31,8 @@
     <SelfContained>false</SelfContained>
   </PropertyGroup>
   <ItemGroup>
-    <!-- These DLLs ship in PS7. You may need to add more to the list depending on your app's dependencies, and PS5.1 requires PowerShellStandard  -->
+    <!-- These DLLs ship in PS7 so we say PrivateAssets meaning "dont include this in the publish".
+    You may need to add more to the list depending on your app's dependencies, and PS5.1 requires PowerShellStandard  -->
     <PackageReference Include="System.Management.Automation" Version="7.3.2" PrivateAssets="all" />
 
     <!-- This one is weird, SMA lists 13.0.1 but it keeps getting output anyways, so we use exclude rather than private -->
