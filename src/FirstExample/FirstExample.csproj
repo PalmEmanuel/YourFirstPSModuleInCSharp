@@ -8,7 +8,7 @@
       PowerShell 5.1+: netstandard2.0
     -->
     <TargetFramework>net7.0</TargetFramework>
-    <!-- This implicitly adds a bunch of BCL libraries -->
+    <!-- This implicitly adds a bunch of common base class libraries (BCL) so you dont have to put 'using namespace' for them at the top -->
     <ImplicitUsings>enable</ImplicitUsings>
     <!-- This makes it easier to deal with app-breaking null situations at compile time before you run your code -->
     <Nullable>enable</Nullable>
@@ -19,7 +19,7 @@
 
 <!-- PowerShell 7.2+ Module Configuration -->
   <PropertyGroup>
-    <!-- PWSH is our runtime so this helps us exclude BCL libraries. You may need to change this if a BCL library you need doesnt ship with PWSH -->
+    <!-- PWSH is our runtime so this helps us exclude BCL. You may need to change this if a BCL library you need doesnt ship with PWSH -->
     <SelfContained>false</SelfContained>
   </PropertyGroup>
   <ItemGroup>
