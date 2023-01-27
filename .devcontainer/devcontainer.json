@@ -5,9 +5,10 @@
   // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
   "image": "mcr.microsoft.com/devcontainers/dotnet:0-7.0",
   "features": {
-    "ghcr.io/devcontainers/features/powershell:1": {
-      "version": "latest"
-    }
+    // Uncomment this if you need a newer version of PowerShell then what ships with the dotnet devcontainer
+    // "ghcr.io/devcontainers/features/powershell:1": {
+    //   "version": "latest"
+    // }
   },
   "customizations": {
     "vscode": {
@@ -56,6 +57,5 @@
     // Use 'postCreateCommand' to run commands after the container is created.
     // "postCreateCommand": "dotnet restore",
     // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-    // "remoteUser": "root"
   }
 }
