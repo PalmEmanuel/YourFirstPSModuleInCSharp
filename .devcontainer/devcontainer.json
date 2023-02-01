@@ -10,10 +10,12 @@
     //   "version": "latest"
     // }
   },
-
   // Switches our default shell to PowerShell
   "postCreateCommand": "/usr/bin/sudo /usr/bin/chsh -s /usr/bin/pwsh vscode",
-
+  // Allows our container to work in rootless mode which is more secure
+  "containerUser": "vscode",
+  "remoteUser": "vscode",
+  // VSCode specific configuration
   "customizations": {
     "vscode": {
       "extensions": [
