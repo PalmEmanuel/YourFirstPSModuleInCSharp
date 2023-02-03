@@ -21,7 +21,7 @@ function Test-IPNetworkOverlap {
 	)
 
 	process {
-		$InputObject.Overlap($Network)
+		$Network.Overlap($CompareNetwork)
 	}
 }
 
