@@ -11,7 +11,7 @@ open LoremNET
 type GetRandomColorCommand () =
     inherit PSCmdlet ()
 
-    override this.EndProcessing () =
+    override this.EndProcessing() =
         let randomColorString = "#" + Lorem.HexNumber(6)
         this.WriteObject randomColorString
-        base.EndProcessing ()
+        base.EndProcessing()

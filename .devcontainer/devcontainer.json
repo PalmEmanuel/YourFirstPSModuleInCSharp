@@ -49,15 +49,15 @@
       "omnisharp.useModernNet": true,
       "extensions.ignoreRecommendations": true, // Suppresses a message about PowerShell stable because we use preview extension
       "powershell.powerShellDefaultVersion": "PowerShell",
-      "terminal.integrated.profiles.linux": {
-        "pwsh": {
-          "path": "pwsh",
-          "args": [
-            "-nologo"
-          ],
-          "icon": "terminal-powershell"
-        }
-      },
+      // "terminal.integrated.profiles.linux": {
+      //   "pwsh": {
+      //     "path": "pwsh",
+      //     "args": [
+      //       "-nologo"
+      //     ],
+      //     "icon": "terminal-powershell"
+      //   }
+      // },
       "terminal.integrated.defaultProfile.linux": "pwsh"
     }
   }

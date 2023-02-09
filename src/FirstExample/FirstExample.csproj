@@ -22,8 +22,11 @@
 
   <!-- Packages you add with dotnet add package will show up in this first itemgroup you define. -->
   <ItemGroup>
-    <PackageReference Include="IPNetwork2" Version="2.6.548" />
+    <!-- This package gives us some nice functions to generate some random data-->
     <PackageReference Include="Lorem.Universal.Net" Version="4.0.80" />
+
+    <!-- This package gives us some nice tools for working with networks -->
+    <PackageReference Include="IPNetwork2" Version="2.6.548" />
   </ItemGroup>
 
 <!-- PowerShell 7.2+ Module Configuration -->
