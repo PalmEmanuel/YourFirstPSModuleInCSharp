@@ -6,9 +6,9 @@
   "image": "mcr.microsoft.com/devcontainers/dotnet:0-7.0",
   "features": {
     // Uncomment this if you need a newer version of PowerShell then what ships with the dotnet devcontainer
-    // "ghcr.io/devcontainers/features/powershell:1": {
-    //   "version": "latest"
-    // }
+    "ghcr.io/devcontainers/features/powershell:1": {
+      "version": "latest"
+    }
   },
   // Switches our default shell to PowerShell
   "postCreateCommand": "/usr/bin/sudo /usr/bin/chsh -s /usr/bin/pwsh vscode",
