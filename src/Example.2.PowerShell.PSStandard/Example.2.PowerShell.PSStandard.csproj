@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <AssemblyName>PEUStandard</AssemblyName>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+    <SelfContained>false</SelfContained>
+    <!-- To use new non-breaking features with older target you must specify newer language version -->
+    <LangVersion>11.0</LangVersion>
+    <!-- Implicit/Global Usings are not compatible with netstandard2.0 -->
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- -->
+    <PackageReference Include="PowerShellStandard.Library" Version="5.1.1" PrivateAssets="All"/>
+
+    <!-- This package gives us some nice functions to generate some random data-->
+    <PackageReference Include="Lorem.Universal.Net" Version="4.0.80" />
+
+    <!-- This package gives us some nice tools for working with networks -->
+    <PackageReference Include="IPNetwork2" Version="2.6.548" />
+  </ItemGroup>
+</Project>

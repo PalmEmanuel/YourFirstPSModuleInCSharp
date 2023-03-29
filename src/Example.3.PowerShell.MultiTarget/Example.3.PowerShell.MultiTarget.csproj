@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+		<AssemblyName>PEUMultiTarget</AssemblyName>
+    <TargetFrameworks>net6.0;net471</TargetFrameworks>
+    <Nullable>enable</Nullable>
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+    <!-- To use new non-breaking features with older target you must specify newer language version -->
+    <LangVersion>11.0</LangVersion>
+    <!-- Implicit/Global Usings are not compatible with netstandard2.0 so we remove that -->
+  </PropertyGroup>
+
+  <!-- -->
+  <Target Name="PostBuild" AfterTargets="Build">
+    <Exec Command="pwsh -f $(MSBuildProjectDirectory)/publish.ps1" />
+  </Target>
+
+	<!-- We use different reference packages depending on what we are targeting -->
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net471' ">
+    <PackageReference Include="PowerShellStandard.Library" Version="5.1.1" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' != 'net6.0' ">
+    <PackageReference Include="System.Management.Automation" Version="7.2.0" PrivateAssets="all" />
+  </ItemGroup>
+
+</Project>

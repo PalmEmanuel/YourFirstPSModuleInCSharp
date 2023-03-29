@@ -1,44 +1,39 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <!-- By default, your assembly/module dll is named same as the folder. Specify this to name it something else -->
+    <AssemblyName>PEUPowerShell</AssemblyName>
+
     <!--
-      This targets PowerShell 7.3+
+      This targets PowerShell 7.2+, the current oldest supported release as of Feburary 2023. This gives us
+      the broadest compatibility across PowerShell while still allowing us to use new-ish features.
+
       To target others:
+      PowerShell 7.3+: net7.0
       PowerShell 7.2+: net6.0
-      PowerShell 5.1+: netstandard2.0
+      PowerShell 5.1+: netstandard2.0 (single set of assemblies) or net471 (multi-targeting)
     -->
-    <TargetFramework>net7.0</TargetFramework>
-
-    <!-- This implicitly adds a bunch of common base class libraries (BCL) so you dont have to put 'using namespace' for them at the top -->
-    <ImplicitUsings>enable</ImplicitUsings>
-
-    <!-- This makes it easier to deal with app-breaking null situations at compile time before you run your code -->
-    <Nullable>enable</Nullable>
+    <TargetFramework>net6.0</TargetFramework>
 
     <!-- This cuts down on the amount of stuff that shows up in our out directory, if localization isn't important to you-->
     <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
 
-  </PropertyGroup>
 
+  </PropertyGroup>
   <!-- Packages you add with dotnet add package will show up in this first itemgroup you define. -->
   <ItemGroup>
+    <!-- This package gives us some nice functions to generate some random data-->
     <PackageReference Include="Lorem.Universal.Net" Version="4.0.80" />
+
+    <!-- This package gives us some nice tools for working with networks -->
+    <PackageReference Include="IPNetwork2" Version="2.6.548" />
   </ItemGroup>
 
 <!-- PowerShell 7.2+ Module Configuration -->
-  <PropertyGroup>
-    <!-- PWSH is our runtime so this helps us exclude BCL. You may need to change this if a BCL library you need doesnt ship with PWSH -->
-    <SelfContained>false</SelfContained>
-  </PropertyGroup>
   <ItemGroup>
     <!-- These DLLs ship in PS7 so we say PrivateAssets meaning "dont include this in the publish".
-    You may need to add more to the list depending on your app's dependencies, and PS5.1 requires PowerShellStandard  -->
-    <PackageReference Include="System.Management.Automation" Version="7.3.2" PrivateAssets="all" />
-
-    <!-- This one is weird, SMA lists 13.0.1 but it keeps getting output anyways, so we use exclude rather than private -->
-    <!-- <PackageReference Include="Newtonsoft.Json" Version="13.0.1" ExcludeAssets="all" /> -->
-    <!-- ExcludeAssets is used because these include runtimes we dont want to ship -->
-    <!-- <PackageReference Include="System.Security.Cryptography.Pkcs" Version="7.0.1" ExcludeAssets="all" /> -->
-    <!-- <PackageReference Include="System.Security.Cryptography.ProtectedData" Version="7.0.0" ExcludeAssets="all" /> -->
+    You may need to add more to the list depending on your app's dependencies
+    -->
+    <PackageReference Include="System.Management.Automation" Version="7.2.0" PrivateAssets="all" />
   </ItemGroup>
 </Project>
