@@ -1,6 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <AssemblyName>PEUCSharp</AssemblyName>
     <!--
       This targets PowerShell 7.3+
       To target others:
