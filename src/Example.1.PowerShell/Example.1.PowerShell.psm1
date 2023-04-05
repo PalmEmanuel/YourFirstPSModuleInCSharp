@@ -10,7 +10,7 @@ function Set-RandomPSColors {
 	[CmdletBinding()]
 	$UnchangeableColors = @('DefaultTokenColor')
 	(Get-PSReadLineOption).psobject.properties.name.Where{$_ -like '*Color' -and $_ -notin $UnchangeableColors} |
-		ForEach-Object { $Colors = @{} } { $Colors[$($_ -replace 'Color')] = Get-RandomColor } -End { Set-PSReadLineOption -Colors $Colors }
+		ForEach-Object -Begin { $Colors = @{} } -Process { $Colors[$($_ -replace 'Color')] = Get-RandomColor } -End { Set-PSReadLineOption -Colors $Colors }
 }
 
-Export-ModuleMember Set-RandomPSColors
+Export-ModuleMember -Function Set-RandomPSColors

@@ -12,7 +12,7 @@
 
   <!-- -->
   <Target Name="PostBuild" AfterTargets="Build">
-    <Exec Command="pwsh -f $(MSBuildProjectDirectory)/publish.ps1" />
+    <Exec Command='pwsh -File "$(MSBuildProjectDirectory)\build.ps1"' />
   </Target>
 
 	<!-- We use different reference packages depending on what we are targeting -->
@@ -20,7 +20,7 @@
     <PackageReference Include="PowerShellStandard.Library" Version="5.1.1" PrivateAssets="all" />
   </ItemGroup>
 
-  <ItemGroup Condition=" '$(TargetFramework)' != 'net6.0' ">
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net6.0' ">
     <PackageReference Include="System.Management.Automation" Version="7.2.0" PrivateAssets="all" />
   </ItemGroup>
 
