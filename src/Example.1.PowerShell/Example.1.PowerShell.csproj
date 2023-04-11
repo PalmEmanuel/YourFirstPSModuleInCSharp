@@ -17,9 +17,8 @@
 
     <!-- This cuts down on the amount of stuff that shows up in our out directory, if localization isn't important to you-->
     <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
-
-
   </PropertyGroup>
+
   <!-- Packages you add with dotnet add package will show up in this first itemgroup you define. -->
   <ItemGroup>
     <!-- This package gives us some nice functions to generate some random data-->
@@ -27,13 +26,10 @@
 
     <!-- This package gives us some nice tools for working with networks -->
     <PackageReference Include="IPNetwork2" Version="2.6.548" />
-  </ItemGroup>
-
-<!-- PowerShell 7.2+ Module Configuration -->
-  <ItemGroup>
+    
+    <!-- PowerShell 7.2+ Module Configuration -->
     <!-- These DLLs ship in PS7 so we say PrivateAssets meaning "dont include this in the publish".
-    You may need to add more to the list depending on your app's dependencies
-    -->
+    You may need to add more to the list depending on your app's dependencies -->
     <PackageReference Include="System.Management.Automation" Version="7.2.0" PrivateAssets="all" />
   </ItemGroup>
 </Project>
