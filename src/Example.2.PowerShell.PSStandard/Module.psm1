@@ -1,6 +1,6 @@
 using namespace System.Net
 #We will fix this to be redistributable later, for now this works with the default dotnet publish
-Add-Type -Path (Join-Path $PSScriptRoot 'bin/Debug/net6.0/publish/*.dll')
+Add-Type -Path (Join-Path $PSScriptRoot 'bin/Debug/netstandard2.0/publish/*.dll')
 
 function Get-RandomColor {
 	return "#$([LoremNET.Lorem]::HexNumber(6))"
