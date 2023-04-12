@@ -11,11 +11,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.2.PowerShell.PSStan
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.3.CSharp", "src\Example.3.CSharp\Example.3.CSharp.csproj", "{DB6CAF7F-35CA-4888-A615-CB7B0EADF523}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.4.CSharp.PSStandard", "src\Example.4.CSharp.PSStandard\Example.4.CSharp.PSStandard.csproj", "{3B7C9861-9863-4990-8B91-F51FE11ED905}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.5.CSharp.PSStandard", "src\Example.5.CSharp.PSStandard\Example.5.CSharp.PSStandard.csproj", "{3B7C9861-9863-4990-8B91-F51FE11ED905}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Example.5.FSharp", "src\Example.5.FSharp\Example.5.FSharp.fsproj", "{69B43DD8-1DA6-4556-A813-4570786B162E}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Example.6.FSharp", "src\Example.6.FSharp\Example.6.FSharp.fsproj", "{69B43DD8-1DA6-4556-A813-4570786B162E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.6.PowerShell.MultiTarget", "src\Example.6.PowerShell.MultiTarget\Example.6.PowerShell.MultiTarget.csproj", "{9D4F9AAA-D7A5-4C61-8352-DA050AD934DA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.7.PowerShell.MultiTarget", "src\Example.7.PowerShell.MultiTarget\Example.7.PowerShell.MultiTarget.csproj", "{9D4F9AAA-D7A5-4C61-8352-DA050AD934DA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
