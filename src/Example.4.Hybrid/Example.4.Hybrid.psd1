@@ -1,7 +1,7 @@
 @{
 
 # Script module or binary module file associated with this manifest.
-  RootModule       = 'Example.4.Hybrid.psm1'
+RootModule       = './Example.4.Hybrid.psm1'
 
 # Version number of this module.
 ModuleVersion = '0.2.0'
@@ -58,17 +58,19 @@ RequiredAssemblies = @('./bin/Debug/net7.0/publish/Lorem.NET.dll')
 # FormatsToProcess = @()
 
 # Modules to import as nested modules of the module specified in RootModule/ModuleToProcess
-# NestedModules = @()
+  # NestedModules    = @('./bin/Debug/net7.0/publish/PEUCSharp.dll')
 
-# Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
-FunctionsToExport = @()
+  # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
+  FunctionsToExport = @(
+    'Set-PEURandomPSColors'
+  )
 
-# Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-CmdletsToExport = @(
+  # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
+  CmdletsToExport   = @(
     'Get-PEURandomEmail'
     'Get-PEURandomDate'
     'Get-PEURandomSentence'
-)
+  )
 
 # Variables to export from this module
 VariablesToExport = ''
