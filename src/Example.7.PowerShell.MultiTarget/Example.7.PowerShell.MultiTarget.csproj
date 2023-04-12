@@ -11,8 +11,8 @@
   </PropertyGroup>
 
   <!-- -->
-  <Target Name="PostBuild" AfterTargets="Build">
-    <Exec Command='pwsh -File "$(MSBuildProjectDirectory)\build.ps1" -Source $(OutputPath)' />
+  <Target Name="PostPublish" AfterTargets="Publish">
+    <Exec Command='pwsh -File "$(MSBuildProjectDirectory)\publish.ps1" -Source $(OutputPath)' />
   </Target>
 
 	<!-- We use different reference packages depending on what we are targeting -->
