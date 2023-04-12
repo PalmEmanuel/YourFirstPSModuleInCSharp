@@ -1,7 +1,7 @@
 @{
 
 # Script module or binary module file associated with this manifest.
-RootModule = './bin/Debug/net7.0/publish/Example.2.CSharp.dll'
+  RootModule       = './bin/Debug/net7.0/publish/PEUCSharp.dll'
 
 # Version number of this module.
 ModuleVersion = '0.2.0'
