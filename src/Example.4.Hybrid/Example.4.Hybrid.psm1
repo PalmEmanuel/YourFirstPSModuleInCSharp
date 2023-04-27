@@ -1,4 +1,4 @@
-Import-Module $PSScriptRoot\bin\Debug\net7.0\PEUHybrid.dll
+Import-Module '$PSScriptRoot\bin\Debug\net7.0\PEUHybrid.dll'
 
 function Set-PEURandomPSColors {
   [CmdletBinding()]

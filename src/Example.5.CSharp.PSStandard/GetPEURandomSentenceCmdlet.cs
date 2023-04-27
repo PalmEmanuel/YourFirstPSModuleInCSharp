@@ -5,10 +5,10 @@ using LoremNET;
 [Cmdlet(VerbsCommon.Get, $"{Consts.ModulePrefix}Sentence")]
 public class GetPEURandomSentenceCmdlet : PSCmdlet
 {
-    [Parameter()]
+    [Parameter]
     public int Min { get; set; } = 5;
 
-    [Parameter()]
+    [Parameter]
     public int Max { get; set; } = 10;
 
     protected override void ProcessRecord()

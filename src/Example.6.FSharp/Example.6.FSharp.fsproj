@@ -1,7 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <AssemblyName>PEUFSharp</AssemblyName>
+    <TargetFramework>net7.0</TargetFramework>
     <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
@@ -13,7 +14,7 @@
 
   <ItemGroup>
     <PackageReference Include="Lorem.Universal.Net" Version="4.0.80" />
-    <PackageReference Include="System.Management.Automation" Version="7.2.0" PrivateAssets="All" />
+    <PackageReference Include="System.Management.Automation" Version="7.3.2" PrivateAssets="All" />
   </ItemGroup>
 
 </Project>
