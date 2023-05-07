@@ -5,7 +5,7 @@ using LoremNET;
 [Cmdlet(VerbsCommon.Get, $"{Consts.ModulePrefix}Color")]
 public class GetPEURandomColorCmdlet : PSCmdlet
 {
-    protected override void ProcessRecord()
+    protected override void EndProcessing()
     {
         WriteObject($"#{Lorem.HexNumber(6)}");
     }

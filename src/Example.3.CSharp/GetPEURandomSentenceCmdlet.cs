@@ -11,7 +11,7 @@ public class GetPEURandomSentenceCmdlet : PSCmdlet
     [Parameter()]
     public int Max { get; set; } = 10;
 
-    protected override void ProcessRecord()
+    protected override void EndProcessing()
     {
         WriteObject(Lorem.Sentence(Min, Max));
     }

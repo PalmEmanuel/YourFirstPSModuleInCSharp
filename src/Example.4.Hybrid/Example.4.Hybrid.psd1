@@ -1,7 +1,7 @@
 @{
 
 # Script module or binary module file associated with this manifest.
-RootModule       = './Example.4.Hybrid.psm1'
+RootModule = './Example.4.Hybrid.psm1'
 
 # Version number of this module.
 ModuleVersion = '0.2.0'
@@ -62,7 +62,7 @@ RequiredAssemblies = @('./bin/Debug/net7.0/publish/Lorem.NET.dll')
 
   # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
   FunctionsToExport = @(
-    'Set-PEURandomPSColors'
+    'Write-PEURandomColorMessage'
   )
 
   # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.

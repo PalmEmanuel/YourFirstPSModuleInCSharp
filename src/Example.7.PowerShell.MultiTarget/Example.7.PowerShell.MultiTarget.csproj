@@ -12,7 +12,7 @@
 
   <!-- -->
   <Target Name="PostPublish" AfterTargets="Publish">
-    <Exec Command='pwsh -File "$(MSBuildProjectDirectory)\publish.ps1" -Source "$(OutputPath)/publish"' />
+    <Exec Command='pwsh -File "$(MSBuildProjectDirectory)\publish.ps1" -TargetFramework "$(TargetFramework)" -Source "$(OutputPath)/publish"' />
   </Target>
 
 	<!-- We use different reference packages depending on what we are targeting -->
@@ -22,6 +22,11 @@
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'net6.0' ">
     <PackageReference Include="System.Management.Automation" Version="7.2.0" PrivateAssets="all" />
+  </ItemGroup>
+
+	<!-- Use this package regardless of platform and version -->
+  <ItemGroup>
+    <PackageReference Include="Lorem.Universal.Net" Version="4.0.80" />
   </ItemGroup>
 
 </Project>

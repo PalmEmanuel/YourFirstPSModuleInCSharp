@@ -1,7 +1,7 @@
 @{
 
 # Script module or binary module file associated with this manifest.
-RootModule = './bin/Debug/netstandard2.0/publish/PEUStandard.dll'
+RootModule = '.\Example.7.PowerShell.MultiTarget.psm1'
 
 # Version number of this module.
 ModuleVersion = '0.2.0'
@@ -10,7 +10,7 @@ ModuleVersion = '0.2.0'
 # CompatiblePSEditions = @()
 
 # ID used to uniquely identify this module
-GUID = '3c7301ad-dc83-47bd-937f-6e49b0c9cf3f'
+GUID = '731db37d-8e0f-41ec-a593-d906a1e308af'
 
 # Author of this module
 Author = 'Emanuel Palm & Justin Grote'
@@ -46,7 +46,7 @@ Copyright = '(c) Emanuel Palm & Justin Grote. All rights reserved.'
 # RequiredModules = @()
 
 # Assemblies that must be loaded prior to importing this module
-RequiredAssemblies = @('./bin/Debug/netstandard2.0/publish/Lorem.NET.dll')
+# RequiredAssemblies = @()
 
 # Script files (.ps1) that are run in the caller's environment prior to importing this module.
 # ScriptsToProcess = @()
@@ -61,15 +61,12 @@ RequiredAssemblies = @('./bin/Debug/netstandard2.0/publish/Lorem.NET.dll')
 # NestedModules = @()
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
-FunctionsToExport = @()
-
-# Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-CmdletsToExport = @(
-    'Get-PEURandomEmail'
-    'Get-PEURandomDate'
-    'Get-PEURandomSentence'
+FunctionsToExport = @(
     'Write-PEURandomColorMessage'
 )
+
+# Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
+CmdletsToExport = @()
 
 # Variables to export from this module
 VariablesToExport = ''

@@ -1,14 +1,12 @@
 Import-Module "$PSScriptRoot\bin\Debug\net7.0\publish\PEUHybrid.dll"
 
-function Set-PEURandomPSColors {
-  [CmdletBinding()]
-  $UnchangeableColors = @('DefaultTokenColor')
-	(Get-PSReadLineOption).psobject.properties.name.Where{ $_ -like '*Color' -and $_ -notin $UnchangeableColors } |
-    ForEach-Object -Begin {
-      $Colors = @{}
-    } -Process {
-      $Colors[$($_ -replace 'Color')] = Get-PEURandomColor
-    } -End {
-      Set-PSReadLineOption -Colors $Colors
-    }
+function Write-PEURandomColorMessage {
+	[CmdletBinding()]
+	param(
+		[Parameter(Mandatory)]
+		[string]$Message
+	)
+	$RandomColor = Get-PEURandomColor
+	$AnsiString = $PSStyle.Foreground.FromRgb($RandomColor)
+	Write-Output ($AnsiString + $Message + $PSStyle.Reset)
 }

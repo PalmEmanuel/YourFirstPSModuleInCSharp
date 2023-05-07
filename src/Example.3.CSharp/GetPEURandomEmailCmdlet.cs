@@ -5,7 +5,7 @@ using LoremNET;
 [Cmdlet(VerbsCommon.Get, $"{Consts.ModulePrefix}Email")]
 public class GetPEURandomEmailCmdlet : PSCmdlet
 {
-    protected override void ProcessRecord()
+    protected override void EndProcessing()
     {
         WriteObject(Lorem.Email());
     }

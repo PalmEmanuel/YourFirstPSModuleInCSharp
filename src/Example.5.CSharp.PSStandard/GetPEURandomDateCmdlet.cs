@@ -12,7 +12,7 @@ public class GetPEURandomDateCmdlet : PSCmdlet
     [Parameter]
     public DateTime NotAfter { get; set; } = DateTime.Parse("2150-12-31");
 
-    protected override void ProcessRecord()
+    protected override void EndProcessing()
     {
         WriteObject(Lorem.DateTime(NotBefore, NotAfter));
     }

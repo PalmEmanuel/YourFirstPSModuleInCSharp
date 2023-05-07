@@ -2,15 +2,17 @@ using namespace System.Net
 #We will fix this to be redistributable later, for now this works with the default dotnet publish
 Add-Type -Path (Join-Path $PSScriptRoot 'bin/Debug/netstandard2.0/publish/*.dll')
 
-function Get-RandomColor {
-	return "#$([LoremNET.Lorem]::HexNumber(6))"
-}
-
-function Set-RandomPSColors {
+function Write-PEURandomColorMessage {
 	[CmdletBinding()]
-	$UnchangeableColors = @('DefaultTokenColor')
-	(Get-PSReadLineOption).psobject.properties.name.Where{$_ -like '*Color' -and $_ -notin $UnchangeableColors} |
-		ForEach-Object { $Colors = @{} } { $Colors[$($_ -replace 'Color')] = Get-RandomColor } -End { Set-PSReadLineOption -Colors $Colors }
+	param(
+		[Parameter(Mandatory)]
+		[string]$Message
+	)
+
+    # $PSStyle was added in PowerShell 7.2
+    # In lower versions we need to write the ANSI string ourselves
+    $escapeChar = [char]27
+	Write-Output "$escapeChar[38;5;$([LoremNET.Lorem]::Integer(1, 255))m$Message $escapeChar[0m"
 }
 
 function Test-IPNetworkOverlap {
@@ -36,4 +38,4 @@ function Test-IPNetworkOverlap {
 	}
 }
 
-Export-ModuleMember Test-IPNetworkOverlap,Set-RandomPSColors
+Export-ModuleMember Test-IPNetworkOverlap,Write-PEURandomColorMessage

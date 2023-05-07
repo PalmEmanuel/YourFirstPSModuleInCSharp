@@ -1,7 +1,7 @@
 @{
 
 # Script module or binary module file associated with this manifest.
-RootModule       = './bin/Debug/net6.0/publish/PEUFSharp.dll'
+RootModule = './bin/Debug/net6.0/publish/PEUFSharp.dll'
 
 # Version number of this module.
 ModuleVersion = '0.2.0'
@@ -65,10 +65,10 @@ FunctionsToExport = @()
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = @(
-    'Get-PEURandomColor'
     'Get-PEURandomDate'
     'Get-PEURandomSentence'
     'Get-PEURandomEmail'
+    'Write-PEURandomColorMessage'
 )
 
 # Variables to export from this module

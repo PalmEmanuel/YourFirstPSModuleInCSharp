@@ -2,15 +2,19 @@ using namespace System.Net
 #We will fix this to be redistributable later, for now this works with the default dotnet publish
 Add-Type -Path (Join-Path $PSScriptRoot 'bin/Debug/net6.0/publish/*.dll')
 
-function Get-RandomColor {
-	return "#$([LoremNET.Lorem]::HexNumber(6))"
+function Get-PEURandomColor {
+	"#$([LoremNET.Lorem]::HexNumber(6))"
 }
 
-function Set-RandomPSColors {
+function Write-PEURandomColorMessage {
 	[CmdletBinding()]
-	$UnchangeableColors = @('DefaultTokenColor')
-	(Get-PSReadLineOption).psobject.properties.name.Where{$_ -like '*Color' -and $_ -notin $UnchangeableColors} |
-		ForEach-Object -Begin { $Colors = @{} } -Process { $Colors[$($_ -replace 'Color')] = Get-RandomColor } -End { Set-PSReadLineOption -Colors $Colors }
+	param(
+		[Parameter(Mandatory)]
+		[string]$Message
+	)
+	$RandomColor = Get-PEURandomColor
+	$AnsiString = $PSStyle.Foreground.FromRgb($RandomColor)
+	Write-Output ($AnsiString + $Message + $PSStyle.Reset)
 }
 
-Export-ModuleMember -Function Set-RandomPSColors
+Export-ModuleMember -Function Write-PEURandomColorMessage

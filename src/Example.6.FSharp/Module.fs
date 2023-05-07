@@ -1,23 +1,15 @@
-﻿namespace PEURandom // use your module name for the namespace
+﻿// use your module name for the namespace
+namespace PEURandom
 
-open System.Management.Automation // PowerShell attributes come from this namespace
+// PowerShell attributes come from this namespace
+open System.Management.Automation
 open LoremNET
 open System
 
 /// Describe cmdlet in /// comments
 /// Cmdlet attribute takes verb names as strings or verb enums
 /// Output type works the same as for PowerShell cmdlets
-[<Cmdlet("Get", "PEURandomColor")>]
-[<OutputType(typeof<string>)>]
-type GetRandomColorCommand() =
-    inherit PSCmdlet()
-
-    override this.EndProcessing() =
-        let randomColorString = "#" + Lorem.HexNumber(6)
-        this.WriteObject randomColorString
-        base.EndProcessing()
-
-[<Cmdlet("Get", "PEURandomSentence")>]
+[<Cmdlet(VerbsCommon.Get, "PEURandomSentence")>]
 [<OutputType(typeof<string>)>]
 type GetRandomSentenceCommand() =
     inherit PSCmdlet()
@@ -31,9 +23,8 @@ type GetRandomSentenceCommand() =
     override this.EndProcessing() =
         let sentence = Lorem.Sentence(this.Min, this.Max)
         this.WriteObject sentence
-        base.EndProcessing()
 
-[<Cmdlet("Get", "PEURandomDate")>]
+[<Cmdlet(VerbsCommon.Get, "PEURandomDate")>]
 [<OutputType(typeof<string>)>]
 type GetRandomDateCommand() =
     inherit PSCmdlet()
@@ -46,13 +37,26 @@ type GetRandomDateCommand() =
     override this.EndProcessing() =
         let date = Lorem.DateTime(this.NotBefore, this.NotAfter)
         this.WriteObject date
-        base.EndProcessing()
 
-[<Cmdlet("Get", "PEURandomEmail")>]
+[<Cmdlet(VerbsCommon.Get, "PEURandomEmail")>]
 [<OutputType(typeof<string>)>]
 type GetRandomEmailCommand() =
     inherit PSCmdlet()
     override this.EndProcessing() =
         let email = Lorem.Email()
         this.WriteObject email
-        base.EndProcessing()
+
+[<Cmdlet(VerbsCommunications.Write, "PEURandomColorMessage")>]
+[<OutputType(typeof<string>)>]
+type GetRandomColorCommand() =
+    inherit PSCmdlet()
+
+    [<Parameter(Mandatory = true)>]
+    member val Message : string = "" with get, set
+
+    override this.EndProcessing() =
+        let randomColor = Lorem.HexNumber 6
+        let colorNumber = Int32.Parse(randomColor, Globalization.NumberStyles.HexNumber)
+        let ansiColorString = PSStyle.Instance.Foreground.FromRgb colorNumber
+
+        this.WriteObject(ansiColorString + this.Message + PSStyle.Instance.Reset)
