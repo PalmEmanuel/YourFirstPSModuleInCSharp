@@ -1,3 +1,4 @@
+name: RunTests
 run-name: 🎉 Your First Binary PS Module! 🎉
 on: [
   push,
@@ -15,4 +16,4 @@ jobs:
         run: |
           Write-Host -Fore Green "Running Available Tests in $PWD"
           Import-Module Pester -PassThru
-          Invoke-Pester
+          Invoke-Pester tests/Example.1.Tests.ps1

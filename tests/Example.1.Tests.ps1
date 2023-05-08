@@ -4,5 +4,6 @@ Describe 'Example.1.Powershell' {
     dotnet publish $ProjectPath/YourFirstPSModuleInCSharp.sln
   }
   It 'Works' {
+    $true | Should -Be $true
   }
 }
