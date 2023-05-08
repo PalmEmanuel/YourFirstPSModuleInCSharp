@@ -14,6 +14,5 @@ jobs:
         id: test
         run: |
           Write-Host -Fore Green "Running Available Tests in $PWD"
-          Install-Module -Name Pester -Force -SkipPublisherCheck -WarningAction SilentlyContinue
-          Get-Content tests/Example.1.PowerShell.Tests.ps1
-          Invoke-Pester tets/Example.1.PowerShell.Tests.ps1
+          Import-Module Pester -PassThru
+          Invoke-Pester
