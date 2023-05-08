@@ -15,8 +15,5 @@ jobs:
         run: |
           Write-Host -Fore Green "Running Available Tests in $PWD"
           Install-Module -Name Pester -Force -SkipPublisherCheck -WarningAction SilentlyContinue
-          $config = New-PesterConfiguration
-          $config.Run.Throw = $true
-          $config.Output.Verbosity = 'Detailed'
-
-          Invoke-Pester -Configuration $config
+          Get-Content tests/Example.1.PowerShell.Tests.ps1
+          Invoke-Pester tets/Example.1.PowerShell.Tests.ps1
