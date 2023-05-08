@@ -1,4 +1,4 @@
-name: RunTests
+name: 🔍 Verify
 run-name: 🎉 Your First Binary PS Module! 🎉
 on: [
   push,
@@ -9,6 +9,7 @@ defaults:
     shell: pwsh
 jobs:
   test:
+    name: 🌿 Branch Verify
     runs-on: ubuntu-latest
     steps:
       - name: 📤 Checkout
@@ -20,4 +21,4 @@ jobs:
         run: |
           Write-Host -Fore Green "Running Available Tests in $PWD"
           Import-Module Pester -PassThru
-          Invoke-Pester
+          Invoke-Pester -Output Detailed
