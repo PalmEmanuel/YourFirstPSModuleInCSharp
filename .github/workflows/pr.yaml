@@ -1,0 +1,22 @@
+run-name: 🎉 Your First Binary PS Module! 🎉
+on: [
+  push,
+  pull_request
+]
+defaults:
+  run:
+    shell: pwsh
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🧪 Pester Tests
+        id: test
+        run: |
+          Write-Host -Fore Green "Running Available Tests in $PWD"
+          Install-Module -Name Pester -Force -SkipPublisherCheck -WarningAction SilentlyContinue
+          $config = New-PesterConfiguration
+          $config.Run.Throw = $true
+          $config.Output.Verbosity = 'Detailed'
+
+          Invoke-Pester -Configuration $config
