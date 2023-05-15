@@ -13,7 +13,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <!-- -->
+    <!-- There's a specific PowerShellStandard library for targeting multiple PowerShell versions -->
     <PackageReference Include="PowerShellStandard.Library" Version="5.1.1" PrivateAssets="All"/>
 
     <!-- This package gives us some nice functions to generate some random data-->
