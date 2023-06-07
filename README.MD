@@ -1,6 +1,22 @@
-# Your First PS Module in C#
+# Your First PowerShell Module in C#
 
-This is a demo of how to develop a PowerShell Module in C#.
+This is a demo of how to develop a PowerShell Module in C#. This repository is the companion to the PSConfEU 2023 Presentation "Your First Module in C#".
+
+## Follow Along Setup
+
+### Option 1: Codespaces (Recommended)
+
+[GitHub Codespaces](https://github.com/features/codespaces) provides a complete preconfigured development environment that runs in GitHub. GitHub provides all users 60 hours a month of free usage. You do not even need Visual Studio Code installed locally, it can run within your browser.
+
+1. Sign up for a GitHub account if you do not already have one. https://github.com/join
+1. Open the [Your First PowerShell Module in C# Codespaces Quickstart Link](https://codespaces.new/PalmEmanuel/YourFirstPSModuleInCSharp?quickstart=1) in the browser of your choice (Edge/Chrome recommended)
+
+
+
+
+### Option 2: Devcontainer
+
+A
 
 ## Customizations
 
