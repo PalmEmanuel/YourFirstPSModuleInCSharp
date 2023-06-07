@@ -5,3 +5,6 @@ Write-Host -Fore Green 'Making pwsh our default shell'
 
 Write-Host -Fore Green 'Perform Initial Dotnet Publish'
 & dotnet build
+
+Write-Host -Fore Green 'Install Pester'
+Install-Module Pester -AllowPrerelease -Force
