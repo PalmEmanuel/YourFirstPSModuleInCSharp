@@ -26,4 +26,21 @@ Describe 'Lab 1: Return a random email' {
       $actual | Should -Not -Contain '.'
     }
   }
+
+  Context 'Get-PEURandomEmail' {
+    It -Skip 'Generates a Random Sentence between 5 and 10 words' {}
+    It -Skip 'Generates a sentence between -Min and -Max'
+    It -Skip '-Name ends the sentence with ", {Name}"'
+    It -Skip 'Names provided via pipeline produce 3 separate sentences ending in the persons name'
+  }
+
+  Context 'Get-PEUAge' {
+    It -Skip 'Generates a random birthday for the subject'
+    It -Skip 'Generates random birthdays for each name provided via the pipeline'
+  }
+  Context 'Test-PEUAge' {
+    It -Skip 'Derives from Get-PEUAge'
+    It -Skip 'Returns null if the user is functional'
+    It -Skip 'Throws InvalidOperationException if the specified user is under 18'
+  }
 }
