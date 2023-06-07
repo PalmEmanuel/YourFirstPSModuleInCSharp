@@ -9,20 +9,14 @@ open System
 /// Describe cmdlet in /// comments
 /// Cmdlet attribute takes verb names as strings or verb enums
 /// Output type works the same as for PowerShell cmdlets
-[<Cmdlet(VerbsCommon.Get, "PEURandomSentence")>]
+[<Cmdlet(VerbsCommon.Get, "PEURandomLetter")>]
 [<OutputType(typeof<string>)>]
-type GetRandomSentenceCommand() =
+type GetRandomLetterCommand() =
     inherit PSCmdlet()
 
-    [<Parameter>]
-    member val Min : int = 5 with get, set
-
-    [<Parameter>]
-    member val Max : int = 10 with get, set
-
     override this.EndProcessing() =
-        let sentence = Lorem.Sentence(this.Min, this.Max)
-        this.WriteObject sentence
+        let letter = Lorem.Letter()
+        this.WriteObject letter
 
 [<Cmdlet(VerbsCommon.Get, "PEURandomDate")>]
 [<OutputType(typeof<string>)>]
