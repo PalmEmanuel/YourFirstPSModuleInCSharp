@@ -11,7 +11,7 @@
     }
   },
   // Switches our default shell to PowerShell
-  "postCreateCommand": "/usr/bin/sudo /usr/bin/chsh -s /usr/bin/pwsh vscode",
+  "postCreateCommand": "/usr/bin/pwsh -f .devcontainer/postCreate.ps1",
   // Allows our container to work in rootless mode which is more secure
   "containerUser": "vscode",
   "remoteUser": "vscode",
@@ -19,10 +19,21 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "justin-grote.powershell-extension-pack",
+        "ms-dotnettools.csharp@prerelease",
+        "ms-dotnettools.csdevkit@prerelease", //TODO: Remove prelease when this goes stable
         "josefpihrt-vscode.roslynator", //This also installs the C# extension. We cant specify them both because it leads to a race condition currently due to bug in codespaces loading
+        "ms-vscode.powershell",
         "adrianwilczynski.namespace",
-        "kreativ-software.csharpextensions"
+        "ms-vscode-remote.remote-containers",
+        "anseki.vscode-color", //Useful for picking colors
+        "EditorConfig.EditorConfig", //Easier to enforce editing styles in vscode
+        "mhutchie.git-graph", // Simple Visual Git Interface
+        "oderwat.indent-rainbow",
+        "pspester.pester-test",
+        "vscode-icons-team.vscode-icons",
+        "TylerLeonhardt.vscode-inline-values-powershell",
+        "usernamehw.errorlens",
+        "chouzz.vscode-better-align"
       ]
     },
     "settings": {
@@ -49,15 +60,19 @@
       "omnisharp.useModernNet": true,
       "extensions.ignoreRecommendations": true, // Suppresses a message about PowerShell stable because we use preview extension
       "powershell.powerShellDefaultVersion": "PowerShell",
-      // "terminal.integrated.profiles.linux": {
-      //   "pwsh": {
-      //     "path": "pwsh",
-      //     "args": [
-      //       "-nologo"
-      //     ],
-      //     "icon": "terminal-powershell"
-      //   }
-      // },
+      "powershell.pester.codeLens": false,
+      "powershell.pester.debugOutputVerbosity": "Detailed",
+      "powershell.pester.useLegacyCodeLens": false,
+      "powershell.codeFormatting.alignPropertyValuePairs": true,
+      "powershell.codeFormatting.autoCorrectAliases": true,
+      "powershell.codeFormatting.newLineAfterOpenBrace": true,
+      "powershell.codeFormatting.openBraceOnSameLine": true,
+      "powershell.codeFormatting.pipelineIndentationStyle": "IncreaseIndentationForFirstPipeline",
+      "powershell.codeFormatting.preset": "OTBS",
+      "powershell.codeFormatting.trimWhitespaceAroundPipe": true,
+      "powershell.codeFormatting.useConstantStrings": true,
+      "powershell.codeFormatting.useCorrectCasing": true,
+      "powershell.codeFormatting.whitespaceBetweenParameters": true,
       "terminal.integrated.defaultProfile.linux": "pwsh"
     }
   }

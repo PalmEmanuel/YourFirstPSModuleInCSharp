@@ -12,6 +12,7 @@
       "args": [],
       "createTemporaryIntegratedConsole": true,
       "attachDotnetDebugger": true,
+      "preLaunchTask": "Build"
     },
     {
       "name": "PowerShell: Binary Module Interactive Session",
@@ -19,6 +20,7 @@
       "request": "launch",
       "createTemporaryIntegratedConsole": true,
       "attachDotnetDebugger": true,
+      "preLaunchTask": "Build"
     }
   ]
 }

@@ -1,0 +1,16 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build",
+      "icon": {
+        "color": "terminal.ansiCyan",
+        "id": "tools"
+      },
+      "type": "shell",
+      "command": "dotnet build -c Debug",
+      "group": "build",
+      "isBackground": false,
+    }
+  ]
+}
