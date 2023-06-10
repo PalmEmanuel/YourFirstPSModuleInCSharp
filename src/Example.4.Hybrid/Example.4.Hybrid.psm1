@@ -1,4 +1,4 @@
-Import-Module "$PSScriptRoot\bin\Debug\net7.0\publish\PEUHybrid.dll"
+Import-Module "$PSScriptRoot\bin\Debug\net6.0\publish\PEUHybrid.dll"
 
 function Write-PEURandomColorMessage {
 	[CmdletBinding()]

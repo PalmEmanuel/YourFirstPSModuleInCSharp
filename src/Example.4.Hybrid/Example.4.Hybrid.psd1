@@ -46,7 +46,7 @@ Copyright = '(c) Emanuel Palm & Justin Grote. All rights reserved.'
 # RequiredModules = @()
 
 # Assemblies that must be loaded prior to importing this module
-RequiredAssemblies = @('./bin/Debug/net7.0/publish/Lorem.NET.dll')
+RequiredAssemblies = @('./bin/Debug/net6.0/publish/Lorem.NET.dll')
 
 # Script files (.ps1) that are run in the caller's environment prior to importing this module.
 # ScriptsToProcess = @()
