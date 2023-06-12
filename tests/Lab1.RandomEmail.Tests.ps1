@@ -19,7 +19,7 @@ Describe 'Lab 1: Return a random email' {
       [mailaddress]$actual | Should -Not -BeNullOrEmpty
     }
 
-    It '-UserNameOnly switch only returns the username' {
+    It '-UsernameOnly switch only returns the username' {
       $actual = Get-PEURandomEmail -UsernameOnly
       $actual | Should -Not -BeNullOrEmpty
       $actual | Should -Not -Contain '@'
