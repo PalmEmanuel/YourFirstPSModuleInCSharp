@@ -1,6 +1,6 @@
 Describe 'Lab 1: Return a random email' {
   BeforeAll {
-    $SCRIPT:ProjectName = 'Lab.1.RandomEmail'
+    $SCRIPT:ProjectName = 'Lab1.RandomEmail'
     $ErrorActionPreference = 'Stop'
     $SCRIPT:ProjectPath = Join-Path $PSScriptRoot "../src/$ProjectName"
     $SCRIPT:PublishPath = Join-Path $ProjectPath 'bin/Debug/net6.0/publish'
@@ -25,15 +25,6 @@ Describe 'Lab 1: Return a random email' {
       $actual | Should -Not -Contain '@'
       $actual | Should -Not -Contain '.'
     }
-  }
-}
-
-Describe -Skip 'Lab 2: Get a random sentence' {
-  Context 'Get-PEURandomSentence' {
-    It 'Generates a Random Sentence between 5 and 10 words' {}
-    It 'Generates a sentence between -Min and -Max' {}
-    It '-Name ends the sentence with ", {Name}"' {}
-    It 'Names provided via pipeline produce 3 separate sentences ending in the persons name' {}
   }
 }
 
