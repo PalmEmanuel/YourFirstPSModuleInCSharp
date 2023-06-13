@@ -26,6 +26,7 @@ Describe -Skip 'Lab 3: Bouncer Script' {
     }
     It 'Generates random birthdays for each name provided via the pipeline' {
       $names = 'PSConfEUParticipant', 'PSConfEUParticipant2', 'PSConfEUParticipant3'
+
       $actual = $names | Get-PEUAge
       $actual.Count | Should -BeExactly $names.Count
       $names | ForEach-Object {
@@ -39,8 +40,27 @@ Describe -Skip 'Lab 3: Bouncer Script' {
   }
 
   Context 'Test-PEUAge' {
-    It 'Derives from Get-PEUAge' {}
-    It 'Returns null if the user is functional' {}
-    It 'Throws InvalidOperationException if the specified user is under -Age' {}
+    It 'Passes thru the user object if the user is of age' {
+      $user = [PSCustomObject]@{
+        Name     = 'PSConfEUParticipant'
+        Birthday = (Get-Date).AddYears(-25)
+      }
+
+      $actual = $user | Test-PEUAge
+
+      $actual | Should -Be $user
+    }
+    It 'Throws InvalidOperationException if the specified user is under -Age' {
+      $user = [PSCustomObject]@{
+        Name     = 'PSConfEUParticipant'
+        Birthday = (Get-Date).AddYears(-25).AddDays(1)
+      }
+
+      $testPeuAgeScript = {
+        $user | Test-PEUAge -Age 26
+      }
+
+      $testPeuAgeScript | Should -Throw -ExceptionType [InvalidOperationException]
+    }
   }
 }
