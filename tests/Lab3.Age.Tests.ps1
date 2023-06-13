@@ -1,4 +1,4 @@
-Describe -Skip 'Lab 3: Bouncer Script' {
+Describe 'Lab 3: Bouncer Script' {
   BeforeAll {
     $SCRIPT:ProjectName = 'Lab.3.Age'
     $ErrorActionPreference = 'Stop'
