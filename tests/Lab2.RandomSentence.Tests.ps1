@@ -38,7 +38,7 @@ Describe 'Lab 2: Get a random sentence' {
       $name = 'PSConfEUParticipant'
       $actual = Get-PEURandomSentence -Name $name
       $actual | Should -Not -BeNullOrEmpty
-      $actual | Should -Match -RegularExpression "^.*, $name"
+      $actual | Should -Match -RegularExpression ", $name`$"
     }
     It 'Names provided via pipeline produce 3 separate sentences ending in the persons name' {
       $name = 'PSConfEUParticipant'
@@ -46,8 +46,7 @@ Describe 'Lab 2: Get a random sentence' {
       $actual | Should -Not -BeNullOrEmpty
       $actual.Count | Should -BeExactly 3
       ($actual | Select-Object -Unique).Count | Should -BeExactly 3
-      
-      $actual | ForEach-Object { $_ | Should -Match -RegularExpression "^.*, $name" }
+      $actual | ForEach-Object { $_ | Should -Match -RegularExpression ", $name`$" }
     }
   }
 }
