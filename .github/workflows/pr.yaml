@@ -1,7 +1,6 @@
 name: 🔍 Verify
 run-name: 🎉 Your First Binary PS Module! 🎉
 on: [
-  push,
   pull_request
 ]
 defaults:
