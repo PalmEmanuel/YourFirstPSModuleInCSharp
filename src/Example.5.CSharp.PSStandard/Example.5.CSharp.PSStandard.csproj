@@ -8,7 +8,7 @@
     <Nullable>enable</Nullable>
 
     <!-- To use new non-breaking features with older target you must specify newer language version -->
-    <LangVersion>11.0</LangVersion>
+    <LangVersion>10.0</LangVersion>
 
     <!-- This cuts down on a lot of extra stuff that might show up in your publish folder-->
     <SatelliteResourceLanguages>en</SatelliteResourceLanguages>

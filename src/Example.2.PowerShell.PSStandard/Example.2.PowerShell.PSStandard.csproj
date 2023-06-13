@@ -8,7 +8,7 @@
     <SelfContained>false</SelfContained>
     <!-- To use new non-breaking features with older target you must specify newer language version
       can also be set to "latest" -->
-    <LangVersion>11.0</LangVersion>
+    <LangVersion>10.0</LangVersion>
     <!-- Implicit/Global Usings are not compatible with netstandard2.0 -->
   </PropertyGroup>
 
