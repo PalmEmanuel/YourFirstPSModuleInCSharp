@@ -53,11 +53,11 @@ Describe -Skip 'Lab 3: Bouncer Script' {
     It 'Throws InvalidOperationException if the specified user is under -Age' {
       $user = [PSCustomObject]@{
         Name     = 'PSConfEUParticipant'
-        Birthday = (Get-Date).AddYears(-25).AddDays(1)
+        Birthday = (Get-Date).AddYears(-15)
       }
 
       $testPeuAgeScript = {
-        $user | Test-PEUAge -Age 26
+        $user | Test-PEUAge -Age 18
       }
 
       $testPeuAgeScript | Should -Throw -ExceptionType [InvalidOperationException]
