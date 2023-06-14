@@ -1,6 +1,5 @@
 ﻿namespace PEURandom;
 using System.Management.Automation;
-using System.Net.Mail;
 using LoremNET;
 
 [Cmdlet(VerbsCommon.Get, "PEURandomSentence")]
