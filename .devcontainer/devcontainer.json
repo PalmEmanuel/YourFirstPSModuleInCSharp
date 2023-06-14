@@ -29,7 +29,6 @@
         "EditorConfig.EditorConfig", //Easier to enforce editing styles in vscode
         "mhutchie.git-graph", // Simple Visual Git Interface
         "oderwat.indent-rainbow",
-        "pspester.pester-test",
         "vscode-icons-team.vscode-icons",
         "TylerLeonhardt.vscode-inline-values-powershell",
         "usernamehw.errorlens",
@@ -60,9 +59,7 @@
         "omnisharp.useModernNet": true,
         "extensions.ignoreRecommendations": true, // Suppresses a message about PowerShell stable because we use preview extension
         "powershell.powerShellDefaultVersion": "PowerShell",
-        "powershell.pester.codeLens": false,
         "powershell.pester.debugOutputVerbosity": "Detailed",
-        "powershell.pester.useLegacyCodeLens": false,
         "powershell.codeFormatting.alignPropertyValuePairs": true,
         "powershell.codeFormatting.autoCorrectAliases": true,
         "powershell.codeFormatting.newLineAfterOpenBrace": true,
