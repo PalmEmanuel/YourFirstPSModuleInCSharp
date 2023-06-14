@@ -3,7 +3,7 @@ using System.Management.Automation;
 using System.Net.Mail;
 using LoremNET;
 
-[Cmdlet(VerbsCommon.Get, $"PEURandomEmail")]
+[Cmdlet(VerbsCommon.Get, "PEURandomEmail")]
 public class GetPEURandomEmailCmdlet : PSCmdlet
 {
     [Parameter()]
