@@ -13,11 +13,12 @@ This is a demo of how to develop a PowerShell Binary Module. This repository is 
 1. [Sign up for a GitHub account](https://github.com/join) if you do not already have one. It is free to join.
 1. Open our codespaces quickstart link in the browser of your choice (Edge/Chrome recommended)  
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/PalmEmanuel/YourFirstPSModuleInCSharp?quickstart=1)
-1. Click `Create new codespace` when prompted  
+1. Click `Create new codespace` when prompted. You can optionally click `Change Options` and increase the codespace size to 4 cores to improve your experience, however this will halve the total number of codespaces hours which are available to you for no cost. If this is your first time using codespaces, there is still plenty of time to complete this exercise.  
 ![Alt text](images/README/image-1.png)
 1. If you have Visual Studio Code installed, it will prompt you to open a link in Visual Studio code to connect to your codespace, otherwise the web version of Visual Studio Code will open in your browser and connect to the codespace.
-1. Once the codespace loads, you will likely see a warning about the C# prerelease being required. Go ahead and click Upgrade to reload the codespace. This is due to the new C# Dev Kit extension and this message will stop occuring once it becomes generally available.  
+1. Once the codespace loads, you will likely see a warning about the C# prerelease being required. Go ahead and click Upgrade to reload the codespace. This is due to the new C# Dev Kit extension and this message will stop occuring once it becomes generally available.
 ![Alt text](images/README/image-2.png)
+1. The codespace may take several minutes to load.
 1. **Congratulations!** You are now ready to start your PowerShell Binary Module development journey.
 
 ### Option 2: Devcontainer
@@ -52,7 +53,7 @@ Adjust the `devcontainer.json` and change the image version to the SDK you want 
 - [Pester/src/csharp](https://github.com/pester/Pester/tree/main/src/csharp): The ubiquitous test and mock framework for PowerShell.
 - [JustinGrote/Mortar](https://github.com/JustinGrote/Mortar): A templating engine for PowerShell, leveraging the dotnet templating engine.
 - [PalmEmanuel/AzBobbyTables](https://github.com/PalmEmanuel/AzBobbyTables): A lightweight PowerShell module for working with Azure Storage Tables.
-- [JustinGrote/PowerConfig](https://github.com/JustinGrote/PowerConfig): Configure your Script or Module with an overlaying config engine. Uses Microsoft.Extensions.Configuration.
+- [JustinGrote/PowerConfig](https://github.com/JustinGrote/PowerConfig): Configure your Script or Module with an overlaying config engine. Uses Microsoft.Extensions.Confidguration.
 - [BicepNet](https://github.com/PSBicep/BicepNet) for [PSBicep](https://github.com/PSBicep/PSBicep): A PowerShell module for the Bicep language, used for deploying Azure resources declaratively.
 - [lordmilko/PrtgAPI](https://github.com/lordmilko/PrtgAPI): C#/PowerShell interface for PRTG Network Monitor.
 - [PoshAnywhere](https://github.com/justingrote/poshanywhere): An advanced implementation of a PowerShell custom transport. Demonstrates advanced concepts such as a derived PSCmdlet, async operations, and using a BlockingCollection to manage PSCmdlet output

@@ -18,6 +18,7 @@ jobs:
       - name: 🧪 Pester Tests
         id: test
         run: |
+          Install-Module -Name Pester -MinimumVersion 5.4.1 -Force -SkipPublisherCheck -Scope CurrentUser
           Write-Host -Fore Green "Running Available Tests in $PWD"
           Import-Module Pester -PassThru
           Invoke-Pester -Output Detailed
