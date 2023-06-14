@@ -8,10 +8,6 @@
     // Uncomment this if you need a newer version of PowerShell then what ships with the dotnet devcontainer
     "ghcr.io/devcontainers/features/powershell:1": {
       "version": "latest"
-    },
-    "ghcr.io/devcontainers/features/dotnet:1": {
-      "version": "6.0.408",
-      "installUsingApt": "true"
     }
   },
   // Switches our default shell to PowerShell
