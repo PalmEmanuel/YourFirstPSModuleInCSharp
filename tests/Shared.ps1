@@ -3,7 +3,7 @@ function Initialize-TestEnvironment ($ProjectName) {
   $ProjectPath = Resolve-Path (Join-Path $PSScriptRoot "../src/$ProjectName")
   $PublishPath = Join-Path $ProjectPath 'bin/Debug/net6.0/publish'
   if (-not (Test-Path "$ProjectPath/$ProjectName.csproj")) {
-    throw [NotImplementedException]"This lab has not been initialized yet. Hint: (dotnet new classlib -f net6.0 -o $ProjectPath) then copy the contents of Example.1.PowerShell.csproj to $ProjectPath/$ProjectName.csproj."
+    throw [NotImplementedException]"This lab has not been initialized yet. Hint: (dotnet new classlib -o $ProjectPath) then copy the contents of Example.1.PowerShell.csproj to $ProjectPath/$ProjectName.csproj."
   }
   $PackageList = dotnet list $ProjectPath package
   if (-not $PackageList -match 'System.Management.Automation.*7.2') {
