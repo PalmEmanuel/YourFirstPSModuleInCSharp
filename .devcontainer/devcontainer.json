@@ -43,6 +43,7 @@
           "editor.formatOnType": true,
           "editor.wordBasedSuggestions": false
         },
+        "editor.inlayHints.enabled": "offUnlessPressed",
         "csharp.inlayHints.parameters.enabled": true,
         "csharp.inlayHints.parameters.forIndexerParameters": true,
         "csharp.inlayHints.parameters.forLiteralParameters": true,
