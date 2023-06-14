@@ -41,7 +41,7 @@ Describe 'Lab 2: Get a random sentence' {
         ($actual | Select-Object -Unique).Count | Should -BeExactly 3
       }
 
-      It 'Names provided via pipeline each end with the persons name' {
+      It 'Each sentence ends with the corresponding name provided via the pipeline' {
         # Check that each item output matches the corresponding name. 
         #NOTE: This is a bad test if you are attempting to do things in parallel as they will possibly arrive out of order, but it is fine here.
         $i = 0
