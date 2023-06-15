@@ -7,10 +7,10 @@ Describe 'Lab 3: Bouncer Script' {
   Context 'Get-PEUAge' {
     It 'Generates a random birthday for the subject' {
       $actual = Get-PEUAge -Name 'PSConfEUParticipant'
-      $actual.name | Should -Be 'PSConfEUParticipant'
-      $actual.birthday | Should -BeOfType [DateTime]
+      $actual.Name | Should -Be 'PSConfEUParticipant'
+      $actual.BirthDate | Should -BeOfType [DateTime]
     }
-    It 'Generates random birthdays for each name provided via the pipeline' {
+    It 'Generates random BirthDate for each name provided via the pipeline' {
       $names = 'PSConfEUParticipant', 'PSConfEUParticipant2', 'PSConfEUParticipant3'
 
       $actual = $names | Get-PEUAge
@@ -18,8 +18,8 @@ Describe 'Lab 3: Bouncer Script' {
       $names | ForEach-Object {
         $actual.name | Should -Contain $_
       }
-      $actual.birthday.count | Should -BeExactly $names.Count
-      $actual.birthday | ForEach-Object {
+      $actual.BirthDate.count | Should -BeExactly $names.Count
+      $actual.BirthDate | ForEach-Object {
         $PSItem | Should -BeOfType [DateTime]
       }
     }
