@@ -27,20 +27,20 @@ Describe 'Lab 3: Bouncer Script' {
 
   Context 'Assert-PEUAge' {
     It 'Passes thru the user object if the user is of age' {
-      $user = [PSCustomObject]@{
-        Name     = 'PSConfEUParticipant'
-        Birthday = (Get-Date).AddYears(-25)
-      }
+      $user = [Person]::new(
+        'PSConfEUParticipant',
+        (Get-Date).AddYears(-25)
+      )
 
       $actual = $user | Assert-PEUAge -Age 18
 
       $actual | Should -Be $user
     }
     It 'Throws InvalidOperationException if the specified user is under -Age' {
-      $user = [PSCustomObject]@{
-        Name     = 'PSConfEUParticipant'
-        Birthday = (Get-Date).AddYears(-15)
-      }
+      $user = [Person]::new(
+        'UnderAgePSConfEUParticipant',
+        (Get-Date).AddYears(-15)
+      )
 
       $testPeuAgeScript = {
         $user | Assert-PEUAge -Age 18
