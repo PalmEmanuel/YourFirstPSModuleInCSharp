@@ -7,4 +7,4 @@ public interface IPerson {
     DateTime BirthDate { get; }
 }
 
-record Person(string Name, DateTime BirthDate) : IPerson;
+public record Person(string Name, DateTime BirthDate) : IPerson;
