@@ -6,14 +6,16 @@ This is a demo of how to develop a PowerShell Binary Module. This repository is 
 
 ## Follow Along Setup
 
+If you run into any problems with this setup feel free to reach out to either @JustinWGrote or @PalmEmanuel on twitter, you can also file an issue in the GitHub repository and we will respond.
+
 ### Option 1: Codespaces (Recommended)
 
 [GitHub Codespaces](https://github.com/features/codespaces) provides a complete preconfigured development environment that runs in GitHub. GitHub provides all users 60 hours a month of free usage. You do not even need Visual Studio Code installed locally, it can run within your browser.
 
 1. [Sign up for a GitHub account](https://github.com/join) if you do not already have one. It is free to join.
-1. Open our codespaces quickstart link in the browser of your choice (Edge/Chrome recommended)  
+1. Open our codespaces quickstart link in the browser of your choice (Edge/Chrome recommended)
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/PalmEmanuel/YourFirstPSModuleInCSharp?quickstart=1)
-1. Click `Create new codespace` when prompted. You can optionally click `Change Options` and increase the codespace size to 4 cores to improve your experience, however this will halve the total number of codespaces hours which are available to you for no cost. If this is your first time using codespaces, there is still plenty of time to complete this exercise.  
+1. Click `Create new codespace` when prompted. You can optionally click `Change Options` and increase the codespace size to 4 cores to improve your experience, however this will halve the total number of codespaces hours which are available to you for no cost. If this is your first time using codespaces, there is still plenty of time to complete this exercise and we recommend the 4 core experience, the 2 core can be a bit laggy at times for the level of compute intensity we do here.
 ![Alt text](images/README/image-1.png)
 1. If you have Visual Studio Code installed, it will prompt you to open a link in Visual Studio code to connect to your codespace, otherwise the web version of Visual Studio Code will open in your browser and connect to the codespace.
 1. Once the codespace loads, you will likely see a warning about the C# prerelease being required. Go ahead and click Upgrade to reload the codespace. This is due to the new C# Dev Kit extension and this message will stop occuring once it becomes generally available.
@@ -28,7 +30,7 @@ This is an option if you wish to work "offline". It does not require a GitHub ac
 1. Follow the [Dev Containers Tutorial](https://code.visualstudio.com/docs/devcontainers/tutorial) to setup devcontainers on your local computer.
 1. Clone the Github Repository (https://github.com/PalmEmanuel/YourFirstPSModuleInCSharp.git) to a local folder and then open it in Visual Studio Code
 1. You should be prompted to reopen the project in a devcontainer.
-1. Once the codespace loads, you will likely see a warning about the C# prerelease being required. Go ahead and click Upgrade to reload the codespace. This is due to the new C# Dev Kit extension and this message will stop occuring once it becomes generally available.  
+1. Once the codespace loads, you will likely see a warning about the C# prerelease being required. Go ahead and click Upgrade to reload the codespace. This is due to the new C# Dev Kit extension and this message will stop occuring once it becomes generally available.
 ![Alt text](images/README/image-2.png)
 1. **Congratulations!** You are now ready to start your PowerShell Binary Module development journey.
 
