@@ -1,23 +1,26 @@
-﻿namespace PEURandom;
-using System;
-using System.Management.Automation;
+﻿using System.Management.Automation;
 using LoremNET;
 
-record Person(string Name, DateTime BirthDate);
+namespace PEURandom;
 
 [Cmdlet(VerbsCommon.Get, "PEUAge")]
 [OutputType(typeof(Person))]
-public class GetPEURandomSentenceCmdlet : PSCmdlet
+public class GetPEUAgeCmdlet : PSCmdlet
 {
-    [Parameter(ValueFromPipeline = true)]
+    [Parameter(Position = 0, ValueFromPipeline = true, Mandatory = true)]
     public string Name;
     
     protected override void ProcessRecord()
     {
-        DateTime birthDate = Lorem.DateTime();
-
         WriteObject(
-            new Person(Name, birthDate)
+            GetPerson()
+        );
+    }
+
+    Person GetPerson() {
+        return new Person(
+            Name,
+            Lorem.DateTime()
         );
     }
 }
