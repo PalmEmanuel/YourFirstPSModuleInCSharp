@@ -4,6 +4,7 @@ Make a script that will generate random birthdays for a list of names, and then 
 
 ## Get-PEUAge
 
+1. Use the namespace `PEURandom` for all public commands and classes
 1. You should have a command named `Get-PEUAge` which should accept a `Name` parameter that produces a `Person` object that has `Name` and `BirthDate` properties.
 1. The `Name` property should include the name provided via the parameter, and the `BirthDate` property should be a DateTime object indicating the user birthdate.
 1. The `Name` property should work on the pipeline, e.g. `'Bob','Steve','Phil' | Get-PEUAge` and should also work positionally
