@@ -76,7 +76,7 @@ Describe 'Lab 3: Bouncer Script' {
 
         Context 'Assert-PEUAge' {
           It 'Passes thru the user object if the user is of age' {
-            $user = [Person]::new(
+            $user = [PEURandom.Person]::new(
               'PSConfEUParticipant',
         (Get-Date).AddYears(-25)
             )
@@ -86,7 +86,7 @@ Describe 'Lab 3: Bouncer Script' {
             $actual | Should -Be $user
           }
           It 'Throws InvalidOperationException if the specified user is under -Age' {
-            $user = [Person]::new(
+            $user = [PEURandom.Person]::new(
               'UnderAgePSConfEUParticipant',
         (Get-Date).AddYears(-15)
             )
