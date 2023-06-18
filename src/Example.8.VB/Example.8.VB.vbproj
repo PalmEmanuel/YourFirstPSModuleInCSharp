@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>PEURandom</RootNamespace>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Lorem.Universal.Net" Version="4.0.80" />
+    <PackageReference Include="System.Management.Automation" Version="7.2.0" />
+  </ItemGroup>
+
+</Project>
