@@ -1,6 +1,7 @@
 Imports System.Management.Automation
 Imports LoremNET
 
+' By overwhelming demand by Ben Reader (@Powers_hell)
 <Cmdlet(VerbsCommon.Get, "PEURandomLetter")> _
 Public Class GetPEURandomLetterCmdlet
    Inherits Cmdlet
