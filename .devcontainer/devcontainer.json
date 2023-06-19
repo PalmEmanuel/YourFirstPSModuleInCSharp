@@ -20,7 +20,6 @@
     "vscode": {
       "extensions": [
         "ms-dotnettools.csharp@prerelease",
-        "ms-dotnettools.csdevkit@prerelease", //TODO: Remove prelease when this goes stable
         "josefpihrt-vscode.roslynator", //This also installs the C# extension. We cant specify them both because it leads to a race condition currently due to bug in codespaces loading
         "ms-vscode.powershell",
         "adrianwilczynski.namespace",
