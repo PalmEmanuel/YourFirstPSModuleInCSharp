@@ -2,6 +2,9 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/dotnet
 {
   "name": "PowerShell Binary Module",
+  "hostRequirements": {
+    "cpus": 4
+  },
   // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
   "image": "mcr.microsoft.com/devcontainers/dotnet:0-7.0",
   "features": {
