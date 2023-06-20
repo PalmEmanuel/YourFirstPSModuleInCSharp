@@ -3,9 +3,9 @@
   <PropertyGroup>
     <AssemblyName>PEUHybrid</AssemblyName>
     <!--
-      This targets PowerShell 7.3+
+      This targets PowerShell 7.2+
       To target others:
-      PowerShell 7.2+: net6.0
+      PowerShell 7.3+: net7.0
       PowerShell 5.1+: netstandard2.0
     -->
     <TargetFramework>net6.0</TargetFramework>
