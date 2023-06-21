@@ -1,0 +1,46 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <AssemblyName>Lab.3.Bouncer</AssemblyName>
+    <!--
+      This targets PowerShell 7.3+
+      To target others:
+      PowerShell 7.2+: net6.0
+      PowerShell 5.1+: netstandard2.0
+    -->
+    <TargetFramework>net6.0</TargetFramework>
+
+    <!-- This implicitly adds a bunch of common base class libraries (BCL) so you dont have to put 'using namespace' for them at the top -->
+    <ImplicitUsings>enable</ImplicitUsings>
+
+    <!-- This makes it easier to deal with app-breaking null situations at compile time before you run your code -->
+    <Nullable>enable</Nullable>
+
+    <!-- This cuts down on the amount of stuff that shows up in our out directory, if localization isn't important to you-->
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+
+  </PropertyGroup>
+
+  <!-- Packages you add with dotnet add package will show up in this first itemgroup you define. -->
+  <ItemGroup>
+    <!-- This package has functionality for generating random things -->
+    <PackageReference Include="Lorem.Universal.Net" Version="4.0.80" />
+  </ItemGroup>
+
+<!-- PowerShell 7.2+ Module Configuration -->
+  <PropertyGroup>
+    <!-- PWSH is our runtime so this helps us exclude BCL. You may need to change this if a BCL library you need doesnt ship with PWSH -->
+    <SelfContained>false</SelfContained>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- These DLLs ship in PS7 so we say PrivateAssets meaning "dont include this in the publish".
+    You may need to add more to the list depending on your app's dependencies, and PS5.1 requires PowerShellStandard  -->
+    <PackageReference Include="System.Management.Automation" Version="7.2.11" PrivateAssets="All" />
+
+    <!-- This one is weird, SMA lists 13.0.1 but it keeps getting output anyways, so we use exclude rather than private -->
+    <!-- <PackageReference Include="Newtonsoft.Json" Version="13.0.1" ExcludeAssets="all" /> -->
+    <!-- ExcludeAssets is used because these include runtimes we dont want to ship -->
+    <!-- <PackageReference Include="System.Security.Cryptography.Pkcs" Version="7.0.1" ExcludeAssets="all" /> -->
+    <!-- <PackageReference Include="System.Security.Cryptography.ProtectedData" Version="7.0.0" ExcludeAssets="all" /> -->
+  </ItemGroup>
+</Project>
