@@ -14,7 +14,7 @@ public class GetPEURandomAgeCmdlet : PSCmdlet
     }
 }
 
-[Cmdlet("Assert", $"{Consts.ModulePrefix}Age")]
+[Cmdlet(VerbsLifecycle.Assert, $"{Consts.ModulePrefix}Age")]
 public class AssertPEURandomAgeCmdlet : PSCmdlet
 {
     [Parameter(ValueFromPipeline = true, Mandatory = true, Position = 0)]
