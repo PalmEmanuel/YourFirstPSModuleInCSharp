@@ -1,6 +1,6 @@
 using System;
 namespace PEURandom;
-class Person
+public class Person
 {
     public Person(string name, DateTime birthDate)
     {

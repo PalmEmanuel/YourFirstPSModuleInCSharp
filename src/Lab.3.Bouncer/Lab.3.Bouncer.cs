@@ -9,7 +9,8 @@ public class GetPEURandomAgeCmdlet : PSCmdlet
     public string name { get; set; } = "";
     protected override void ProcessRecord()
     {
-        Person person = new(name, Lorem.DateTime(1900));
+        Person person = new Person(name, Lorem.DateTime(1900));
+        WriteObject(person);
     }
 }
 
@@ -19,14 +20,15 @@ public class AssertPEURandomAgeCmdlet : PSCmdlet
     [Parameter(ValueFromPipeline = true, Mandatory = true, Position = 0)]
     public Person person { get; set; } = null;
 
+    [Parameter(Mandatory = true, Position = 1)]
     public int Age { get; set; } = 0;
     protected override void ProcessRecord()
     {
         DateTime now = DateTime.Now;
-        int age = now.Year - person.BirthDate.Year;
-        if (age >= 0)
+        DateTime age = person.BirthDate;
+        if (age >= now)
         {
-            writeObject(person);
+            WriteObject(person);
         }
         else
         {
