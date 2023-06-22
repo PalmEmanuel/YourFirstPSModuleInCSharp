@@ -24,9 +24,9 @@ public class AssertPEURandomAgeCmdlet : PSCmdlet
     public int Age { get; set; } = 0;
     protected override void ProcessRecord()
     {
-        DateTime now = DateTime.Now;
+        DateTime legalAgebarrier = DateTime.Now.AddYears(-Age);
         DateTime age = person.BirthDate;
-        if (age >= now)
+        if (age <= legalAgebarrier)
         {
             WriteObject(person);
         }
