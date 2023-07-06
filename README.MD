@@ -59,3 +59,6 @@ Adjust the `devcontainer.json` and change the image version to the SDK you want 
 - [BicepNet](https://github.com/PSBicep/BicepNet) for [PSBicep](https://github.com/PSBicep/PSBicep): A PowerShell module for the Bicep language, used for deploying Azure resources declaratively.
 - [lordmilko/PrtgAPI](https://github.com/lordmilko/PrtgAPI): C#/PowerShell interface for PRTG Network Monitor.
 - [PoshAnywhere](https://github.com/justingrote/poshanywhere): An advanced implementation of a PowerShell custom transport. Demonstrates advanced concepts such as a derived PSCmdlet, async operations, and using a BlockingCollection to manage PSCmdlet output
+
+## Learn More
+[VSCode Docs: Getting Started with the C# Dev Kit](https://code.visualstudio.com/docs/csharp/get-started)
