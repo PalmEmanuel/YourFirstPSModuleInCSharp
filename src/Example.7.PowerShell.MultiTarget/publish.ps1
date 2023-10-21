@@ -1,14 +1,14 @@
 param(
-	[Parameter(Mandatory)]
-	[ValidateNotNullOrEmpty()]
-	$Source,
+    [Parameter(Mandatory)]
+    [ValidateNotNullOrEmpty()]
+    $Source,
 
-	[Parameter(Mandatory)]
-	[ValidateSet('net471', 'net6.0')]
-	$TargetFramework,
+    [Parameter(Mandatory)]
+    [ValidateSet('net471', 'net6.0')]
+    $TargetFramework,
 
-	[ValidateNotNullOrEmpty()]
-	$OutDir = $(Join-Path $PSScriptRoot '/out/lib')
+    [ValidateNotNullOrEmpty()]
+    $OutDir = $(Join-Path $PSScriptRoot '/out/lib')
 )
 
 # Create output directory for copying files

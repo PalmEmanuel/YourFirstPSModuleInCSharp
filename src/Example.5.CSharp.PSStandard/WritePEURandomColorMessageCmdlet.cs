@@ -1,13 +1,14 @@
 namespace PEURandom;
 using System.Management.Automation;
+
 using LoremNET;
 
 [Cmdlet(VerbsCommunications.Write, $"{Consts.ModulePrefix}ColorMessage")]
 public class WritePEURandomColorMessageCmdlet : PSCmdlet
 {
-  [Parameter(Mandatory = true)]
-  [ValidateNotNullOrEmpty]
-  public string? Message { get; set; }
+    [Parameter(Mandatory = true)]
+    [ValidateNotNullOrEmpty]
+    public string? Message { get; set; }
 
     protected override void EndProcessing()
     {
