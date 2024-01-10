@@ -2,7 +2,7 @@
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/PalmEmanuel/YourFirstPSModuleInCSharp?quickstart=1)
 
-This is a demo of how to develop a PowerShell Binary Module. This repository is the companion to the PSConfEU 2023 Presentation "Creating your first PowerShell module in C#".
+This is a demo of how to develop a PowerShell Binary Module. This repository is the companion to the PSConfEU 2023 Presentation [Creating your first PowerShell module in C#](https://youtu.be/6jQqf-LTRGI)
 
 ## Follow Along Setup
 
