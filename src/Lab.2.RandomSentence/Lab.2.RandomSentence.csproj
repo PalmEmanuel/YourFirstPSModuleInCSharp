@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <!--
+      This targets PowerShell 7.2+, the current oldest supported release as of Feburary 2023. This gives us
+      the broadest compatibility across PowerShell while still allowing us to use new-ish features.
+
+      To target others:
+      PowerShell 7.3+: net7.0
+      PowerShell 7.2+: net6.0
+      PowerShell 5.1+: netstandard2.0 (single set of assemblies) or net471 (multi-targeting)
+    -->
+    <TargetFramework>net6.0</TargetFramework>
+
+    <!-- This cuts down on the amount of stuff that shows up in our out directory, if localization isn't important to you-->
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+  </PropertyGroup>
+
+  <!-- Packages you add with dotnet add package will show up in this first itemgroup you define. -->
+  <ItemGroup>
+    <!-- This package gives us some nice functions to generate some random data-->
+    <PackageReference Include="Lorem.Universal.Net" Version="4.0.80" />
+
+    <!-- This package gives us some nice tools for working with networks -->
+    <PackageReference Include="IPNetwork2" Version="2.6.548" />
+    
+    <!-- PowerShell 7.2+ Module Configuration -->
+    <!-- These DLLs ship in PS7 so we say PrivateAssets meaning "dont include this in the publish".
+    You may need to add more to the list depending on your app's dependencies -->
+    <PackageReference Include="System.Management.Automation" Version="7.2.0" PrivateAssets="all" />
+  </ItemGroup>
+</Project>
